@@ -24,7 +24,7 @@
                                     <td>{{$professor->nome}}</td>
                                     <td>
                                         <div class="ml-auto">
-                                            <a href="#" class="btn btn-primary">Detalhes</a>
+                                        <a href="/professor/{{$professor->id_professor}}" class="btn btn-primary">Detalhes</a>
                                             <a href="#" class="btn btn-danger">Excluir</a>
                                         </div>
                                     </td>

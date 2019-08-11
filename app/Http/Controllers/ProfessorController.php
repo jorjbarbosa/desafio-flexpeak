@@ -27,4 +27,29 @@ class ProfessorController extends Controller
         Professor::create($data);
         return redirect('professores');
     }
+
+    public function show($id)
+    {
+        $professor = Professor::find($id);
+
+        return view('professores/detalhes', [
+            'professor' => $professor
+        ]);
+    }
+
+    public function update($id)
+    {
+        $professor = Professor::find($id);
+        // dd(request()->method());
+        if (request()->isMethod('put')) {
+            $data = request()->validate([
+                'nome' => 'required',
+                'data_nascimento' => 'required'
+            ]);
+            $professor->update($data);
+            return redirect('professores');
+        } else {
+            return view('professores/editar', ['professor' => $professor]);
+        }
+    }
 }
