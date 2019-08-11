@@ -12,3 +12,4 @@ Route::post('professor/cadastrar', 'ProfessorController@store');
 Route::get('professor/{id}', 'ProfessorController@show');
 Route::get('professor/editar/{id}', 'ProfessorController@update');
 Route::put('professor/editar/{id}', 'ProfessorController@update');
+Route::delete('professor/excluir/{id}', 'ProfessorController@delete');

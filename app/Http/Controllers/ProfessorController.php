@@ -52,4 +52,12 @@ class ProfessorController extends Controller
             return view('professores/editar', ['professor' => $professor]);
         }
     }
+
+    public function delete($id)
+    {
+        $professor = Professor::find($id);
+        $professor->delete();
+
+        return redirect('professores');
+    }
 }

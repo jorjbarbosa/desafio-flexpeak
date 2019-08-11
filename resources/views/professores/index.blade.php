@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-body">
                     <h3>Professores Cadastrados</h3>
-                    <table class="table text-center">
+                    <table class="table">
                         <thead>
                             <tr>
                                 <th>id</th>
@@ -23,10 +23,14 @@
                                     <td>{{$professor->id_professor}}</td>
                                     <td>{{$professor->nome}}</td>
                                     <td>
-                                        <div class="ml-auto">
-                                        <a href="/professor/{{$professor->id_professor}}" class="btn btn-primary">Detalhes</a>
-                                            <a href="#" class="btn btn-danger">Excluir</a>
-                                        </div>
+
+                                        <form class="float-right ml-3" action="/professor/excluir/{{$professor->id_professor}}" method="POST">
+                                            <input type="hidden" name="_method" value="DELETE">
+                                            {{ csrf_field() }}
+                                            <button type="submit" class="btn btn-danger">Excluir</button>
+                                            @csrf
+                                        </form>
+                                        <a href="/professor/{{$professor->id_professor}}" class="btn btn-primary float-right ">Detalhes</a>
                                     </td>
                                 </tr>
                                 @endforeach
