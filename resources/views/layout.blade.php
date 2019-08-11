@@ -21,16 +21,16 @@
                       <a class="nav-link" href="/">Home</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" href="alunos">Alunos</a>
+                      <a class="nav-link" href="/alunos">Alunos</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="cursos">Cursos</a>
+                        <a class="nav-link" href="/cursos">Cursos</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="professores">Professores</a>
+                        <a class="nav-link" href="/professores">Professores</a>
                       </li>
                       <li class="nav-item">
-                        <a class="nav-link" href="relatorio">Relatório</a>
+                        <a class="nav-link" href="/relatorio">Relatório</a>
                       </li>
                   </ul>
                 </div>

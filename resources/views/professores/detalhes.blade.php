@@ -1,5 +1,5 @@
 @extends('layout')
 
 @section('content')
-    detalhes
+    detalhess
 @endsection
