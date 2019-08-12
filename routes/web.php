@@ -31,3 +31,7 @@ Route::get('aluno/{id}', 'AlunoController@show');
 Route::get('aluno/editar/{id}', 'AlunoController@update');
 Route::put('aluno/editar/{id}', 'AlunoController@update');
 Route::delete('aluno/excluir/{id}', 'AlunoController@delete');
+
+// Relatorio
+Route::get('relatorio', 'RelatorioController@index');
+Route::get('gerar-relatorio', 'RelatorioController@generate');
