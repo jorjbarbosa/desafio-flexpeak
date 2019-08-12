@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="row">
-        <a href="alunos/cadastrar" class="btn btn-success ml-auto my-3">Cadastrar Aluno</a>
+        <a href="aluno/cadastrar" class="btn btn-success ml-auto my-3">Cadastrar Aluno</a>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="card-body">
                     <h3>Alunos Cadastrados</h3>
@@ -19,39 +19,25 @@
                               </tr>
                             </thead>
                             <tbody >
-                              <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>Laravel Básico</td>
-                                <td>
-                                    <div class="ml-auto">
-                                        <a href="#" class="btn btn-primary">Detalhes</a>
-                                        <a href="#" class="btn btn-danger">Excluir</a>
-                                    </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                    <td>1</td>
-                                    <td>John Doe</td>
-                                    <td>Laravel Básico</td>
-                                    <td>
-                                        <div class="ml-auto">
-                                            <a href="#" class="btn btn-primary">Detalhes</a>
-                                            <a href="#" class="btn btn-danger">Excluir</a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @foreach ($alunos as $aluno)
+
                                 <tr>
-                                    <td>1</td>
-                                    <td>John Doe</td>
-                                    <td>Laravel Básico</td>
+                                    <td>{{$aluno->id_aluno}}</td>
+                                    <td>{{$aluno->nome}}</td>
+                                    <td>{{$aluno->nome_curso}}</td>
                                     <td>
                                         <div class="ml-auto">
-                                            <a href="#" class="btn btn-primary">Detalhes</a>
-                                            <a href="#" class="btn btn-danger">Excluir</a>
-                                        </div>
-                                    </td>
+                                            <form class="float-right ml-3" action="/aluno/excluir/{{$aluno->id_aluno}}" method="POST">
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                                @csrf
+                                            </form>
+                                            <a href="/aluno/{{$aluno->id_aluno}}" class="btn btn-primary">Detalhes</a>
+                                            </div>
+                                         </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                           </table>
                 </div>

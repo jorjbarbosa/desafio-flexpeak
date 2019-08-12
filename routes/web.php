@@ -22,3 +22,12 @@ Route::get('curso/{id}', 'CursoController@show');
 Route::get('curso/editar/{id}', 'CursoController@update');
 Route::put('curso/editar/{id}', 'CursoController@update');
 Route::delete('curso/excluir/{id}', 'CursoController@delete');
+
+// Alunos
+Route::get('alunos', 'AlunoController@index');
+Route::get('aluno/cadastrar', 'AlunoController@store');
+Route::post('aluno/cadastrar', 'AlunoController@store');
+Route::get('aluno/{id}', 'AlunoController@show');
+Route::get('aluno/editar/{id}', 'AlunoController@update');
+Route::put('aluno/editar/{id}', 'AlunoController@update');
+Route::delete('aluno/excluir/{id}', 'AlunoController@delete');
