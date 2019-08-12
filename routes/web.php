@@ -13,3 +13,12 @@ Route::get('professor/{id}', 'ProfessorController@show');
 Route::get('professor/editar/{id}', 'ProfessorController@update');
 Route::put('professor/editar/{id}', 'ProfessorController@update');
 Route::delete('professor/excluir/{id}', 'ProfessorController@delete');
+
+// Cursos
+Route::get('cursos', 'CursoController@index');
+Route::get('curso/cadastrar', 'CursoController@store');
+Route::post('curso/cadastrar', 'CursoController@store');
+Route::get('curso/{id}', 'CursoController@show');
+Route::get('curso/editar/{id}', 'CursoController@update');
+Route::put('curso/editar/{id}', 'CursoController@update');
+Route::delete('curso/excluir/{id}', 'CursoController@delete');

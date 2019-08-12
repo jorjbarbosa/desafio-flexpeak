@@ -9,7 +9,7 @@
             <div class="card">
                 <div class="card-body">
                     <h3>Cadastrar Curso</h3>
-                    <form action="#" method="post">
+                    <form action="/curso/cadastrar" method="post">
                         <div class="form-group">
                             <label for="nome">Nome do Curso</label>
                             <input type="text" name="nome" class="form-control">
@@ -17,12 +17,13 @@
                         <div class="form-group">
                             <label for="nome">Professor Responsável</label>
                             <select name="id_professor" class="form-control">
-                                <option value="1">John Doe</option>
-                                <option value="1">John Doe</option>
-                                <option value="1">John Doe</option>
+                                @foreach ($professores as $professor)
+                                <option value="{{$professor->id_professor}}">{{$professor->nome}}</option>
+                                @endforeach
                             </select>
                         </div>
                         <input type="submit" value="Cadastrar" class="btn btn-success text-center">
+                        @csrf
                     </form>
                 </div>
             </div>

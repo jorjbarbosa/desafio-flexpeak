@@ -5,7 +5,7 @@
         <a href="professor/cadastrar" class="btn btn-success ml-auto my-3">Cadastrar Professor</a>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-8 mx-auto">
             <div class="card">
                 <div class="card-body">
                     <h3>Professores Cadastrados</h3>

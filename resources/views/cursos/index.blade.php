@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <a href="cursos/cadastrar" class="btn btn-success ml-auto my-3">Cadastrar Curso</a>
+        <a href="curso/cadastrar" class="btn btn-success ml-auto my-3">Cadastrar Curso</a>
     </div>
     <div class="row">
         <div class="col-md-12">
@@ -20,42 +20,26 @@
                               </tr>
                             </thead>
                             <tbody >
-                              <tr>
-                                <td>1</td>
-                                <td>Laravel Básico</td>
-                                <td>01/01/2019</td>
-                                <td>John Doe</td>
-                                <td>
-                                    <div class="ml-auto">
-                                        <a href="#" class="btn btn-primary">Detalhes</a>
-                                        <a href="#" class="btn btn-danger">Excluir</a>
-                                    </div>
-                                </td>
-                              </tr>
-                              <tr>
-                                    <td>1</td>
-                                    <td>Laravel Básico</td>
-                                    <td>01/01/2019</td>
-                                    <td>John Doe</td>
-                                    <td>
-                                        <div class="ml-auto">
-                                            <a href="#" class="btn btn-primary">Detalhes</a>
-                                            <a href="#" class="btn btn-danger">Excluir</a>
-                                        </div>
-                                    </td>
-                                </tr>
+                                @foreach ($cursos as $curso)
                                 <tr>
-                                    <td>1</td>
-                                    <td>Laravel Básico</td>
-                                    <td>01/01/2019</td>
-                                    <td>John Doe</td>
+                                    <td>{{$curso->id_curso}}</td>
+                                    <td>{{$curso->nome}}</td>
+                                    <td>{{$curso->data_criacao}}</td>
+                                    <td>{{$curso->nome_professor}}</td>
                                     <td>
                                         <div class="ml-auto">
-                                            <a href="#" class="btn btn-primary">Detalhes</a>
-                                            <a href="#" class="btn btn-danger">Excluir</a>
+                                            <form class="float-right ml-3" action="/curso/excluir/{{$curso->id_curso}}" method="POST">
+                                                <input type="hidden" name="_method" value="DELETE">
+                                                {{ csrf_field() }}
+                                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                                @csrf
+                                            </form>
+                                            <a href="/curso/{{$curso->id_curso}}" class="btn btn-primary">Detalhes</a>
+
                                         </div>
-                                    </td>
+                                     </td>
                                 </tr>
+                                @endforeach
                             </tbody>
                           </table>
                 </div>
