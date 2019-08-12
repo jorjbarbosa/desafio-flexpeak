@@ -73,7 +73,7 @@
                         <div class="form-group">
                             <label for="id_curso">Curso</label>
                             <select name="id_curso" class="form-control {{ $errors->has('estado') ? ' is-invalid' : '' }}">
-                                <option value="{{$aluno->id_curso}}">{{$aluno->nome_curso}}</option>
+                                <option value="{{$aluno->id_curso}}" disabled selected>{{$aluno->nome_curso}}</option>
                                 @foreach ($cursos as $curso)
                                 <option value="{{$curso->id_curso}}">{{$curso->nome}}</option>
                                 @endforeach

@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Professor extends Model
 {
@@ -11,6 +12,7 @@ class Professor extends Model
     protected $primaryKey = 'id_professor';
     protected $guarded = [];
 
+    use SoftDeletes;
     public function cursos()
     {
         return $this->hasMany(Curso::class, 'id_professor');

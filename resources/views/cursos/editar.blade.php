@@ -19,7 +19,7 @@
                         <div class="form-group">
                             <label for="nome">Professor Responsável</label>
                             <select name="id_professor" class="form-control">
-                            <option value="{{$curso->id_professor}}" selected>{{$curso->nome_professor}}</option>
+                            <option value="{{$curso->id_professor}}" selected disabled>{{$curso->nome_professor}}</option>
                                 @foreach ($professores as $professor)
                                 <option value="{{$professor->id_professor}}">{{$professor->nome}}</option>
                                 @endforeach

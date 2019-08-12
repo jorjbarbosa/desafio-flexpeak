@@ -19,6 +19,7 @@ class CreateCursoTable extends Migration
             $table->dateTime('data_criacao');
             $table->integer('id_professor')->unsigned();
             $table->foreign('id_professor')->references('id_professor')->on('professor');
+            $table->softDeletes();
         });
     }
 

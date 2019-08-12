@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Curso extends Model
 {
@@ -10,7 +11,7 @@ class Curso extends Model
     protected $table = 'curso';
     protected $primaryKey = 'id_curso';
     protected $guarded = [];
-
+    use SoftDeletes;
     public function professor()
     {
         return $this->belongsTo(Professor::class);

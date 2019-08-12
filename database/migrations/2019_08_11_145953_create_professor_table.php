@@ -18,6 +18,7 @@ class CreateProfessorTable extends Migration
             $table->string('nome');
             $table->date('data_nascimento');
             $table->dateTime('data_criacao');
+            $table->softDeletes();
         });
     }
 
