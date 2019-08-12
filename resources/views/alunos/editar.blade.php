@@ -8,7 +8,7 @@
         <div class="col-md-6 mx-auto">
             <div class="card mb-3">
                 <div class="card-body">
-                    <h3>Cadastrar Aluno</h3>
+                    <h3>Editar Aluno</h3>
 
                     <form action="/aluno/editar/{{$aluno->id_aluno}}" method="post">
                         <input type="hidden" name="_method" value="PUT">
@@ -82,7 +82,7 @@
                                     <div class="invalid-feedback">{{ $errors->first('estado') }}</div>
                             @endif
                         </div>
-                        <input type="submit" value="Cadastrar" class="btn btn-success text-center">
+                        <input type="submit" value="Editar" class="btn btn-success text-center">
                         @csrf
                     </form>
                 </div>

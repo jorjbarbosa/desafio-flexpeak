@@ -2,13 +2,13 @@
 
 @section('content')
     <div class="row">
-        <a href="cursos/cadastrar" class="btn btn-success ml-auto my-3">Cadastrar Curso</a>
+        <a href="/cursos" class="btn btn-danger ml-auto my-3">Cancelar</a>
     </div>
     <div class="row">
         <div class="col-md-6 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <h3>Cadastrar Curso</h3>
+                    <h3>Editar Curso</h3>
                     <form action="/curso/editar/{{$curso->id_curso}}" method="post">
                         <input type="hidden" name="_method" value="PUT">
                         {{ csrf_field() }}
@@ -25,7 +25,7 @@
                                 @endforeach
                             </select>
                         </div>
-                        <input type="submit" value="Cadastrar" class="btn btn-success text-center">
+                        <input type="submit" value="Editar" class="btn btn-success text-center">
                         @csrf
                     </form>
                 </div>

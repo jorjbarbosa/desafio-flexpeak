@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="row">
-        <a href="cursos/cadastrar" class="btn btn-success ml-auto my-3">Cadastrar Curso</a>
+        <a href="/cursos" class="btn btn-danger ml-auto my-3">Cancelar</a>
     </div>
     <div class="row">
         <div class="col-md-6 mx-auto">

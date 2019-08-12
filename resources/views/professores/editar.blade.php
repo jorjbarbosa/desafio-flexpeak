@@ -8,7 +8,7 @@
         <div class="col-md-6 mx-auto">
             <div class="card">
                 <div class="card-body">
-                    <h3>Cadastrar Professor</h3>
+                    <h3>Editar Professor</h3>
 
                     <form action="/professor/editar/{{$professor->id_professor}}" method="post">
                         <input type="hidden" name="_method" value="PUT">
