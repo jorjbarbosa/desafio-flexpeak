@@ -7,6 +7,7 @@ use App\Curso;
 use App\Professor;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use App\Aluno;
 
 class CursoController extends Controller
 {
@@ -42,8 +43,8 @@ class CursoController extends Controller
             ->select('curso.*', 'professor.nome AS nome_professor')
             ->where('id_curso', '=', $id)
             ->first();
-        // dd($curso);
-        return view('cursos/detalhes', ['curso' => $curso]);
+        $alunosCurso = Aluno::where('id_curso', '=', $curso->id_curso)->get();
+        return view('cursos/detalhes', ['curso' => $curso, 'alunos' => $alunosCurso]);
     }
 
     public function update($id)

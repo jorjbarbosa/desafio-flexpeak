@@ -1,9 +1,7 @@
 <?php
 
 
-Route::get('/', function () {
-    return view('professores/index');
-});
+Route::view('/', 'home');
 
 // Professores
 Route::get('professores', 'ProfessorController@index');

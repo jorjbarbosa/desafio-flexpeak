@@ -12,15 +12,21 @@
                     <form action="/curso/cadastrar" method="post">
                         <div class="form-group">
                             <label for="nome">Nome do Curso</label>
-                            <input type="text" name="nome" class="form-control">
+                            <input type="text" name="nome" class="form-control {{ $errors->has('nome') ? ' is-invalid' : '' }}" value="{{old('nome')}}">
+                            @if ($errors->has('nome'))
+                                <div class="invalid-feedback">{{ $errors->first('nome') }}</div>
+                            @endif
                         </div>
                         <div class="form-group">
-                            <label for="nome">Professor Responsável</label>
-                            <select name="id_professor" class="form-control">
+                            <label for="id_professor">Professor Responsável</label>
+                            <select name="id_professor" class="form-control {{ $errors->has('id_professor') ? ' is-invalid' : '' }}">
                                 @foreach ($professores as $professor)
                                 <option value="{{$professor->id_professor}}">{{$professor->nome}}</option>
                                 @endforeach
                             </select>
+                            @if ($errors->has('id_professor'))
+                                <div class="invalid-feedback">{{ $errors->first('id_professor') }}</div>
+                            @endif
                         </div>
                         <input type="submit" value="Cadastrar" class="btn btn-success text-center">
                         @csrf

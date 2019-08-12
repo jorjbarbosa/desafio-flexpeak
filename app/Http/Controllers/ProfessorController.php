@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Professor;
 use Illuminate\Support\Carbon;
+use App\Curso;
 
 class ProfessorController extends Controller
 {
@@ -31,16 +32,16 @@ class ProfessorController extends Controller
     public function show($id)
     {
         $professor = Professor::find($id);
-
+        $cursosProfessor = Curso::where('id_professor', '=', $professor->id_professor)->get();
         return view('professores/detalhes', [
-            'professor' => $professor
+            'professor' => $professor,
+            'cursos' => $cursosProfessor
         ]);
     }
 
     public function update($id)
     {
         $professor = Professor::find($id);
-        // dd(request()->method());
         if (request()->isMethod('put')) {
             $data = request()->validate([
                 'nome' => 'required',

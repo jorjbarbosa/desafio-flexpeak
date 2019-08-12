@@ -13,14 +13,14 @@
                     <form action="/professor/cadastrar" method="post">
                         <div class="form-group">
                             <label for="nome">Nome</label>
-                            <input type="text" name="nome" class="form-control {{ $errors->has('nome') ? ' is-invalid' : '' }}">
+                            <input type="text" name="nome" class="form-control {{ $errors->has('nome') ? ' is-invalid' : '' }}" value="{{old('nome')}}">
                             @if ($errors->has('nome'))
                                 <div class="invalid-feedback">{{ $errors->first('nome') }}</div>
                             @endif
                         </div>
                         <div class="form-group">
                             <label for="nome">Data de Nascimento</label>
-                            <input type="date" name="data_nascimento" class="form-control {{ $errors->has('data_nascimento') ? ' is-invalid' : '' }}">
+                            <input type="date" name="data_nascimento" class="form-control {{ $errors->has('data_nascimento') ? ' is-invalid' : '' }}" value="{{old('data_nascimento')}}">
                             @if ($errors->has('data_nascimento'))
                                 <div class="invalid-feedback">{{ $errors->first('data_nascimento') }}</div>
                             @endif
