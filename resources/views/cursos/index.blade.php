@@ -5,7 +5,7 @@
         <a href="curso/cadastrar" class="btn btn-success ml-auto my-3">Cadastrar Curso</a>
     </div>
     <div class="row">
-        <div class="col-md-12">
+        <div class="col-md-10 mx-auto">
             <div class="card">
                 <div class="card-body">
                     <h3>Cursos Cadastrados</h3>

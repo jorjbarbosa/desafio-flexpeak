@@ -15,7 +15,7 @@
                     <h3 class="mb-3">Cursos Deste Professor</h3>
                     <ul>
                         @foreach ($cursos as $curso)
-                            <li><a href="/curso/{{$curso->id_aluno}}">{{$curso->nome}}</a></li>
+                            <li><a href="/curso/{{$curso->id_curso}}">{{$curso->nome}}</a></li>
                         @endforeach
                     </ul>
                 </div>
