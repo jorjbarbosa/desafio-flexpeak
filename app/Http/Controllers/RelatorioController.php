@@ -18,7 +18,10 @@ class RelatorioController extends Controller
             ->join('professor', 'curso.id_professor', '=', 'professor.id_professor')
             ->select('aluno.*', 'curso.nome AS nome_curso', 'professor.nome AS nome_professor')
             ->get();
-        $pdf = PDF::loadView('relatorio', compact('alunos'));
+        $pdf = PDF::setOptions([
+            'logOutputFile' => storage_path('logs/log.htm'),
+            'tempDir' => storage_path('logs/')
+        ])->loadView('relatorio', compact('alunos'));
         return $pdf->stream('report.pdf');
     }
 }
